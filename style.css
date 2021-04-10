@@ -2,10 +2,22 @@ body {
     background-color: beige;
 }
 
+header {
+    background-color:burlywood;
+    padding:5px;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 5%;
 
+}
 
 table, th, td {
     border: 1px solid black;
+    border-radius: 10%;
+    border-spacing: 10px;
+    border-bottom-width: 3px;
+    
+    
 
 }
 
@@ -22,3 +34,16 @@ table {
     text-align: center;
 }
 
+#add-employee {
+    text-decoration: underline;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+#monthly-cost {
+    margin-left: 30%;
+    margin-top: 10%;
+    text-decoration: underline;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}

@@ -7,12 +7,18 @@ console.log('JS');
 
 //created click event to add input field values to DOM
 $('#submit-button').on('click', addInputs);
+// $('#submit-button').on('click', getData);
 
 
 };
 
 // declare global variable to contain salary totals
 let salaryTotal = 0;
+let salaryData = 0;
+let salarySum = 0;
+
+const employeesArray = [];
+
 
 
 function addInputs() {
@@ -37,12 +43,17 @@ $('.display-inputs').append(`<tr class="inputs">
     <td class="lastInput">${employee.lastName}</td>
     <td class="idInput">${employee.idNum}</td>
     <td class="jobInput">${employee.jobTitle}</td>
-    <td class="salaryInput">${employee.salary}</td>
+    <td class="salaryInput">$${employee.salary}</td>
     <td><button class="employee-delete">Delete</button></td>
-</tr>`);
+</tr>`).text();
+
+
 
 //create functionality for the delete button to run function when clicked.
 $('.employee-delete').on('click', deleteEmployee);
+// $('.employee-delete').on('click', removeData);
+
+
 
 //get rid of table row border for delete button
 $('.employee-delete').parent().css("border", "none");
@@ -51,13 +62,17 @@ $('.employee-delete').parent().css("border", "none");
 let salary = (Number(employee.salary));
 salaryTotal += salary;
 
+employeesArray.push(employee);
+
 
 clearInputs();
 monthCosts();
 
+
 console.log('Total Annual Salary: ', salaryTotal);
     
 }
+
 
 //clear input field values
 function clearInputs() {
@@ -70,7 +85,6 @@ function clearInputs() {
 
 //function to calculate monthly cost totals
 function monthCosts() {
-
 //calculate monthly cost
 let monthCost = (salaryTotal / 12).toFixed(2);
 
@@ -91,3 +105,21 @@ console.log('in deleteEmployee...');
 $(this).closest('tr').remove();
 
 };// end of deleteEmployee
+
+// function getData() {
+
+// console.log('In getData...');
+
+// salaryData = $('.salaryInput').data();
+// // $('.salaryInput').empty();
+// salarySum += salaryData;
+
+
+// }
+
+// function removeData() {
+// console.log('In removeData..ll');
+
+// $(this).removeData();
+// // $('.salaryInput').removeData();
+// }
