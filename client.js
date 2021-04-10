@@ -41,6 +41,9 @@ $('.display-inputs').append(`<tr class="inputs">
     <td><button class="employee-delete">Delete</button></td>
 </tr>`);
 
+//create functionality for the delete button to run function when clicked.
+$('.employee-delete').on('click', deleteEmployee);
+
 //get rid of table row border for delete button
 $('.employee-delete').parent().css("border", "none");
 
@@ -81,3 +84,10 @@ if( monthCost > 20000) {
 
 } //end of monthCosts
 
+function deleteEmployee() {
+console.log('in deleteEmployee...');
+
+//target the item clicked on and remove whole row
+$(this).closest('tr').remove();
+
+};// end of deleteEmployee
