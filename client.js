@@ -58,9 +58,13 @@ function clearInputs() {
 
 function monthCosts() {
 
-let monthCost = salaryTotal / 12;
+let monthCost = (salaryTotal / 12).toFixed(2);
 
 // $('#month-cost-out').
 $('#month-cost-out').empty().append(monthCost);
+
+if( monthCost > 20000) {
+    $('#month-cost-out').css("background-color", "red");
+}
 
 }
