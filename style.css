@@ -3,3 +3,18 @@ body {
 }
 
 
+
+table, th, td {
+    border: 1px solid black;
+
+}
+
+table {
+    width: 50%;
+
+}
+
+.inputForm {
+    margin-bottom: 50px;
+}
+
