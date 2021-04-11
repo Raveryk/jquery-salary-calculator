@@ -7,7 +7,6 @@ console.log('JS');
 
 //created click event to add input field values to DOM
 $('#submit-button').on('click', addInputs);
-// $('#submit-button').on('click', getData);
 
 
 };
@@ -16,17 +15,14 @@ $('#submit-button').on('click', addInputs);
 let salaryTotal = 0;
 let salaryData = 0;
 let salarySum = 0;
+// let item = '';
 
 const employeesArray = [];
 
 
 
 function addInputs() {
-
-
-// $('.table-row').empty();    
-
-
+ 
 console.log('Adding Inputs');
 
 let employee = {
@@ -45,15 +41,20 @@ $('.display-inputs').append(`<tr class="inputs">
     <td class="jobInput">${employee.jobTitle}</td>
     <td class="salaryInput">$${employee.salary}</td>
     <td><button class="employee-delete">Delete</button></td>
-</tr>`).text();
-
-
+</tr>`);
 
 //create functionality for the delete button to run function when clicked.
 $('.employee-delete').on('click', deleteEmployee);
-// $('.employee-delete').on('click', removeData);
+$('.employee-delete').on('mouseenter', deleteColor);
+$('.employee-delete').on('mouseleave', unbind);
 
-
+function deleteColor() {
+    $(this).css("color", "red");
+    }
+    
+function unbind() {
+    $(this).css("color", "");
+    }
 
 //get rid of table row border for delete button
 $('.employee-delete').parent().css("border", "none");
@@ -64,14 +65,16 @@ salaryTotal += salary;
 
 employeesArray.push(employee);
 
-
+//run functions
 clearInputs();
 monthCosts();
 
 
 console.log('Total Annual Salary: ', salaryTotal);
     
-}
+} //end addInputs
+
+
 
 
 //clear input field values
@@ -82,6 +85,8 @@ function clearInputs() {
     $('#in-job-title').val('');
     $('#in-salary').val('');
 }// end clearInputs
+
+
 
 //function to calculate monthly cost totals
 function monthCosts() {
@@ -98,13 +103,25 @@ if( monthCost > 20000) {
 
 } //end of monthCosts
 
+
+
 function deleteEmployee() {
 console.log('in deleteEmployee...');
 
 //target the item clicked on and remove whole row
 $(this).closest('tr').remove();
+// removeData();
 
 };// end of deleteEmployee
+
+
+
+
+
+
+
+
+
 
 // function getData() {
 
@@ -120,6 +137,9 @@ $(this).closest('tr').remove();
 // function removeData() {
 // console.log('In removeData..ll');
 
-// $(this).removeData();
+// let item = $(this).closest('tr').children('.idInput').data();
+
+// console.log(item)
 // // $('.salaryInput').removeData();
+
 // }
