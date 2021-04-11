@@ -38,13 +38,9 @@ How does someone use this application? Tell a user story here.
 
 This was built using HTML, CSS, JavaScript, and the jQuery library.
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
-
-_Note, include this only if you have a license file. GitHub will generate one for you if you want!_
 
 ## Acknowledgement
-Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. (Thank your people)
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. Also thanks to the great Prime Week 7 Group 1 for being willing and able dialogue partners throughout the week preceding the project.
 
 ## Support
 If you have suggestions or issues, please email me at [raveryk@gmail.com](www.google.com)
